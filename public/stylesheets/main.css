@@ -182,3 +182,8 @@ h1.huge_title {
 .slide li.slide3elements{
   font-size:2.5em;
 }
+
+#header a {
+  text-decoration:none;
+}
+
