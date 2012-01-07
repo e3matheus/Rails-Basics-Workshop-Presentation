@@ -5,33 +5,23 @@ $(function()    {
     hashJump: true,
     hashPrefix: 'slide',
     slideFunctions: {
-      '4': {
-        enter: function() { $('.slide4elements').hide(); },
+      '3': {
+        subslides: [
+          function() { $('#misconception').addClass("strike"); },
+          function() { $('#principles').fadeIn(); },
+          function() { $('#idea').fadeIn(); },
+        ],
+        exit: function() { $('.slide3elements').hide(); }
+      },
+      '5': {
+        enter: function() { $('.slide3elements').hide(); },
         subslides: [
           function() { $('#bulletPoint1').fadeIn(); },
           function() { $('#bulletPoint2').fadeIn(); },
           function() { $('#bulletPoint3').fadeIn(); },
-          function() { $('#codeSnippet').fadeIn(); }
         ],
-        exit: function() { $('.slide4elements').hide(); }
-      },
-      '7': {
-        enter: DEMOS.trig.start,
-        exit: DEMOS.trig.stop
+        exit: function() { $('.slide3elements').hide(); }
       }
     }
   });
-
-  $('#slides').bind('slide.presentr', function(e, slide, dir) {
-    log('Slide: ' + slide + ', Direction: ' + dir);
-  });
-
-  $('#slides').bind('subslide.presentr', function(e, subslide) {
-    log('Subslide: ' + subslide);
-  });
-
-
-  function log(s) {
-    if (window.console && console.log) { console.log(s); }
-  }
 });

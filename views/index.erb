@@ -3,7 +3,7 @@
 <head>
     <title>Retiro de Código de Rails</title>
     <script type='text/javascript' src='javascripts/jquery.js'></script>
-    <script type='text/javascript' src='javascripts/jquery.presentr.min.js'></script>
+    <script type='text/javascript' src='javascripts/jquery.presentr.js'></script>
     <script type='text/javascript' src='javascripts/d3.min.js'></script>
     <script type='text/javascript' src='javascripts/trig-d3.js'></script>
     <script type='text/javascript' src='javascripts/personalization.js'></script>
@@ -13,13 +13,14 @@
 <body>
 
 <div id='header'>
-    <h2 id='name'>Retiro de Código</h2>
+    <a href="/slide1"><h2 id='name'>Retiro de Código</h2></a>
     <h3 id='title'>Aprendiendo Rails en conjunto</h3>
-    <div id='author'></div>
+    <div id='author'>Bases</div>
     <div id='links'>
-      <a href='http://www.twitter.com/jsantell' title='Jordan Santell on Twitter'>@jsantell</a> | 
-      <a href='http://www.github.com/jsantell/presentr' title='Jordan Santell on GitHub'>GitHub</a> | 
-      <a href='http://jsantell.com' title='Jordan Santell portfolio'>jsantell.com</a>
+      <a href='/slide6' title='MVC'>MVC</a> | 
+      <a href='/slide7' title='REST'>REST</a> |
+      <a href='/slide8' title='Convention over configuration y DRY'>Convention over configuration y DRY</a> 
+      <%#<a href='/slide1' title="Don't reinvent the wheel">Don't reinvent the wheel</a> %>
     </div>
 </div>
 
@@ -28,155 +29,67 @@
 <div id='slides'>
 
 <div class='slide'>
-    <h1>Presentr</h1>
-    <p><a href='http://github.com/jsantell/presentr' title='presentr on GitHub'>presentr</a> is <a href='http://jquery.com' title='jQuery'>jQuery</a> plugin designed to let you make a presentation in the browser <strong>fast</strong>.</p>
-
-    <p>So here's a little demo. Hit your <strong>right arrow key</strong> to begin!</p>
+    <h1 class="huge_title">Retiro de Código para aprender Rails</h1>
+    <p class="colaborators">Organizado por Elías Matheus, Laura Gomez, Ivan Acosta Rubio y Osledy Bazo.</p>
 </div>
 
-
 <div class='slide'>
-    <h1>Set Up: Include</h1>
-    <p>Include presentr in your head</p>
-    <pre><code>
-    <span class='orange'>&lt;script type=</span><span class='green'>'text/javascript'</span><span class='orange'> src=</span><span class='green'>'js/jquery.presentr.min.js'</span><span class='orange'>&gt;&lt;/script&gt;</span>
-    </code></pre>
+    <h1>¿Qué es un retiro de código?</h1>
+    <div style="text-align:center"><img src="http://media.tumblr.com/tumblr_lwkv6yZ5mo1qkevvd.jpg"/></div>
 </div>
 
+<div class='slide'>
+    <h1>¿Qué es Rails?</h1>
+    <p>Es un framework de desarrollo web open source escrito en Ruby que fue liberado al público en el 2004.</p>
+    <p id="misconception">Te permite desarrollar de una manera rápida y divertida.</p>
+    <p id="principles" class="hidden">Esta construido con principios de programación innovadores lo cual te facilita mucho la programación.</p>
+    <p id="idea" class="hidden">Al olvidarte de los problemas de configuración y de las limitaciones que te ofrece el lenguaje, te puedes 
+    enfocar en la idea y en el usuario.</p>
+</div>
 
 <div class='slide'>
-    <h1>Set Up: Create</h1>
-    <p>Set up your presentation by using a jQuery selector to select the element who is the parent of the slides</p>
-    <pre><code>
-    <span class='pink'>$</span><span class='blue'>(</span><span class='pink'>function</span><span class='blue'>()    {</span>
-        <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#slides'</span><span class='blue'>)</span>.presentr<span class='blue'>({</span>
-            speed: <span class='orange'>500</span>,
-            pageDisplay: <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#slideinfo'</span><span class='blue'>)</span>,
-            hashJump: <span class='green'>true</span>,
-            hashPrefix: <span class='green'>'slide'</span>
-        <span class='blue'>})</span>;
-    <span class='blue'>})</span>;
-    </code></pre>
+    <h1>Rails es un software con Opinión</h1>
+    <div style="text-align:center;"><iframe width="560" height="315" src="http://www.youtube.com/embed/cGdCI2HhfAU#t=36m00s" frameborder="0" allowfullscreen></iframe></div>
+</div>
+
+<div class='slide'>
+    <h1>Y bueno, antes de comenzar...</h1>
+    <p>Tomamos una decisión peculiar en este retiro de código.</p>
     <ul>
-        <li><strong>speed:</strong> speed in ms of slide changes (default: 1000)</li>
-        <li><strong>pageDisplay:</strong> set this to the jQuery object(s) you'd like to update with frame info (default: null)</li>
-        <li><strong>hashJump:</strong> if you want the slides to update the URL and able to be linked to and snap (default: true)</li>
-        <li><strong>hashPrefix:</strong> string that proceeds the slide in the hash (default: 'slide')</li>
+      <li id='bulletPoint1' class='slide3elements'>Rails es <strong>Ágil</strong>.</li>
+      <li id='bulletPoint2' class='slide3elements'>Rails es <strong>Open Source</strong>.</li>
+      <li id='bulletPoint3' class='slide3elements'>Rails son <strong>Startups</strong>.</li>
     </ul>
-
 </div>
 
+<div class='slide'>
+    <h1>Aprender haciendo</h1>
+    <p>Entren a <a target="blank" href="http://railsforzombies.org">Rails for Zombies</a> y registren su cuenta.</p>
+    <p>Los que quieran ver el tutorial doblado al español, existe una opción abajo a la izquierda antes de ver cada video.</p>
+    <p>Revisen los <strong>challenges</strong>, pregúntense si los saben hacer, pero no tienen por que hacerlo.</p>
+</div>
 
 <div class='slide'>
-    <h1>Features: Subslide Functions</h1>
-    <p>You know those powerpoints where the bullet points fade in?</p>
+    <h1 class="huge_title">Aprendamos REST</h1>
+</div>
+
+<div class='slide'>
+    <h1>La clave de éxito de un curso es buena bibliografía.</h1>
+    <p>Descargar el libro <a href="http://depositfiles.com/files/xjzpnl5x7">"Agile Web Development with Rails" cuarta edición</a>.</p>
+    <p>Realicen el tutorial presentado en el capítulo "Building an application". En específico, las partes A, B y C.</p>
+    <p class="warning">No tomar en cuenta validaciones por ahora.</p>
+</div>
+
+<div class='slide'>
+    <h1>Recursos</h1>
     <ul>
-        <li id='bulletPoint1' class='slide4elements'>That can be implemented too.</li>
-        <li id='bulletPoint2' class='slide4elements'>Just define an array with functions to be called sequentially.</li>
-        <li id='bulletPoint3' class='slide4elements'>Rock on.</li>
-    </ul>    
-    <pre id='codeSnippet' class='slide4elements'><code>
-    <span class='pink'>$</span><span class='blue'>(</span><span class='pink'>function</span><span class='blue'>()    {</span>
-        <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#slides'</span><span class='blue'>)</span>.presentr<span class='blue'>({</span>
-            slideFunctions: <span class='blue'>{</span>
-                <span class='green'>'4'</span>: <span class='blue'>{</span>
-                    subslides: <span class='blue'>[</span>
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#bulletPoint1'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#bulletPoint2'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#bulletPoint3'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#codeSnippet'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                    <span class='blue'>]</span>
-                <span class='blue'>}</span>
-            <span class='blue'>}</span>
-        <span class='blue'>})</span>;
-    </code></pre>
+      <li><a target="blank" href="http://tryruby.org">TryRuby!</a></li>
+      <li><a target="blank" href="http://railscasts.com">Railscasts de Ryan Bates</a></li>
+      <li><a target="blank" href="http://guides.rubyonrails.org">Documentación de Ruby on Rails</a></li>
+      <li><a target="blank" href="http://api.rubyonrails.com">API Ruby on Rails</a></li>
+      <li><a target="blank" href="http://gettingreal.37signals.com/toc.php">Getting Real</a></li>
+    </ul>
 </div>
-
-<div class='slide'>
-    <h1>Features: Enter/Exit Functions</h1>
-    <p>You can also specify functions that get called on slide enter and exit. Go back to the previous slide and notice the elements that were fading in are once again hidden.</p>
-    <pre><code>
-    <span class='pink'>$</span><span class='blue'>(</span><span class='pink'>function</span><span class='blue'>()    {</span>
-        <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#slides'</span><span class='blue'>)</span>.presentr<span class='blue'>({</span>
-            slideFunctions: <span class='blue'>{</span>
-                <span class='green'>'4'</span>: <span class='blue'>{</span>
-                    subslides: <span class='blue'>[</span>
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#bulletPoint1'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#bulletPoint2'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#bulletPoint3'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                        <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#codeSnippet'</span><span class='blue'>)</span>.fadeIn() <span class='blue'>}</span>,
-                    <span class='blue'>]</span>,
-                    enter: <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'.slide4elements'</span><span class='blue'>)</span>.hide() <span class='blue'>}</span>,
-                    exit: <span class='pink'>function</span><span class='blue'>() {</span> <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'.slide4elements'</span><span class='blue'>)</span>.hide() <span class='blue'>}</span>
-                <span class='blue'>}</span>
-            <span class='blue'>}</span>
-        <span class='blue'>})</span>;
-    </code></pre>
-</div>
-
-<div class='slide'>
-    <h1>Features: Enter/Exit Functions</h1>
-    <p>With the ability to call functions upon entering and leaving a slide, you can set up awesome WebGL or canvas demos that are executed only when currently viewing:</p>
-    <pre><code>
-    <span class='pink'>$</span><span class='blue'>(</span><span class='pink'>function</span><span class='blue'>()    {</span>
-        <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#slides'</span><span class='blue'>)</span>.presentr<span class='blue'>({</span>
-            slideFunctions: <span class='blue'>{</span>
-                <span class='green'>'9'</span>: <span class='blue'>{</span>
-                    enter: DEMOS.trig.start,
-                    exit: DEMOS.trig.stop
-                <span class='blue'>}</span>  
-            <span class='blue'>}</span>  
-        <span class='blue'>})</span>;
-    <span class='blue'>})</span>;
-    </code></pre>
-    <p>In the previous examples, anonymous functions were used, but other functions work just fine.</p>
-</div>
-
-<div class='slide'>
-    <h1>Humble Software Trig Demo</h1>
-    <p>This animation is played only when first entering the slide. When leaving the slide, the drawing to canvas stops. Go to the next slide and notice <strong>t</strong> not increasing.</p>
-    <div id='trig'></div>
-    <p><a href='http://www.humblesoftware.com/demos/trig_d3' title='Humble Software'>Trig demo using D3 by Humble Software</a></p>
-</div>
-
-<div class='slide'>
-    <h1>Features: Events</h1>
-    <p>You can also specify a callback function on init to be called <strong>onSlide</strong> change or <strong>onSubslide</strong> change. Additionally, you can bind to these events. Open up your console and check out what these events were doing.</p>
-    <pre><code>
-    <span class='pink'>$</span><span class='blue'>(</span><span class='green'>'#slides'</span><span class='blue'>)</span>
-        .bind<span class='blue'>(</span><span class='green'>'slide.presentr'</span>, <span class='pink'>function</span><span class='blue'>(</span>e, currentslide, direction<span class='blue'>) {</span>
-            ...
-        <span class='blue'>})</span>
-        .bind<span class='blue'>(</span><span class='green'>'subslide.presentr'</span>, <span class='pink'>function</span><span class='blue'>(</span>e, currentslide<span class='blue'>) {</span>
-            ...
-        <span class='blue'>})</span>;
-    </code></pre>
-</div>
-
-<div class='slide'>
-    <h1>Features: Page Display</h1>
-    <p>Specifying a <strong>pageDisplay</strong> jQuery object replaces the HTML of that object with the current slide number out of the total number of slides.</p>
-    <p>See the <strong>big pink box</strong> in the upper right?</p>
-</div>
-
-
-<div class='slide'>
-    <h1>Features: Slide Jump</h1>
-    <p>Setting <strong>hashJump</strong> to true will update the URL with a hash on every slide event. The prefix can be changed by setting <strong>hashPrefix</strong> to the string you'd like to use. In this demo, the prefix is just <strong>slide</strong>.</p>
-    <p>See the <strong>#slide10</strong> in the URL? Copy and paste the URL and <strong>presentr</strong> will snap right to that slide.</p>
-</div>
-
-<div class='slide'>
-    <h1>Start using presentr!</h1>
-    <p>Start using it! Grab or fork from <a href='http://www.github.com/jsantell/presentr' title='Presentr on GitHub'>GitHub</a>, or below!</p>
-    <p><a href='javascripts/jquery.presentr.js' title='Full source code for Presentr'>presentr: full source</a></p>
-    <p><a href='javascripts/jquery.presentr.min.js' title='Minimized presentr'>presentr: minimized</a></p>
-
-    <p>Contact me (<a href='http://twitter.com/jsantell' title='Jordan Santell on Twitter'>Twitter</a>, <a href='http://github/jsantell' title='Jordan Santell on GitHub'>GitHub</a>, <a href='http://jsantell.com/contact' title='Jordan Santell portfolio'>my site</a>) if you have any feedback!</p>
-</div>
-
-</div>
-
 
 </body>
 </html>
