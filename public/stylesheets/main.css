@@ -182,8 +182,10 @@ h1.huge_title {
 .slide li.slide3elements{
   font-size:2.5em;
 }
-
 #header a {
   text-decoration:none;
 }
-
+.important_url {
+  text-align:center;
+  display:block;
+}
